@@ -1,0 +1,20 @@
+{
+  "name": "dead-tide-last-extraction",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.js",
+    "check": "npm run test && npm run build"
+  },
+  "dependencies": {
+    "lucide": "^0.468.0",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}

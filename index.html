@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#07110f" />
+    <meta name="description" content="尸潮：最后撤离，一款可直接在浏览器游玩的 2D 俯视角肉鸽打僵尸爽游。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="尸潮：最后撤离" />
+    <meta property="og:description" content="撑过六分钟，构筑火力，击穿尸潮。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>尸潮：最后撤离</title>
+  </head>
+  <body>
+    <main id="app" aria-label="尸潮：最后撤离">
+      <div id="game-canvas" aria-hidden="true"></div>
+
+      <section id="title-screen" class="screen screen--title">
+        <div class="title-lockup">
+          <p class="eyebrow">DEAD TIDE / 06:00</p>
+          <h1>尸潮<br /><span>最后撤离</span></h1>
+          <p class="tagline">活下来。变强。杀穿黎明前的六分钟。</p>
+          <div class="difficulty" role="group" aria-label="难度">
+            <button class="difficulty__item is-active" data-difficulty="normal">标准</button>
+            <button class="difficulty__item" data-difficulty="frenzy">狂潮</button>
+          </div>
+          <button id="start-button" class="command command--primary">
+            <i data-lucide="crosshair"></i><span>开始行动</span>
+          </button>
+          <div class="best-run" id="best-run">最佳纪录 00:00 · 0 击杀</div>
+        </div>
+        <div class="title-status">
+          <span><b></b> 隔离区失守</span>
+          <span>撤离窗口 / 06:00</span>
+        </div>
+      </section>
+
+      <section id="hud" class="hud is-hidden" aria-label="战斗状态">
+        <div class="hud__top">
+          <div class="survivor-panel">
+            <div class="portrait"><i data-lucide="shield"></i><span id="level-label">1</span></div>
+            <div class="vitals">
+              <div class="bar bar--health"><span id="health-fill"></span><b id="health-label">100 / 100</b></div>
+              <div class="bar bar--xp"><span id="xp-fill"></span></div>
+            </div>
+          </div>
+          <div class="timer-block">
+            <span id="phase-label">封锁线</span>
+            <strong id="timer-label">06:00</strong>
+          </div>
+          <div class="hud-actions">
+            <div class="kill-count"><i data-lucide="skull"></i><strong id="kill-label">0</strong></div>
+            <button id="mute-button" class="icon-button" aria-label="静音" title="静音"><i data-lucide="volume-2"></i></button>
+            <button id="pause-button" class="icon-button" aria-label="暂停" title="暂停"><i data-lucide="pause"></i></button>
+          </div>
+        </div>
+        <div id="boss-wrap" class="boss-wrap is-hidden">
+          <div><span id="boss-name">疫变屠夫</span><b id="boss-health-label">100%</b></div>
+          <div class="boss-bar"><span id="boss-fill"></span></div>
+        </div>
+        <div id="wave-banner" class="wave-banner"></div>
+        <div id="combo" class="combo"><span>连杀</span><strong>0</strong><b>x1.0</b></div>
+        <div id="weapon-rack" class="weapon-rack" aria-label="武器等级"></div>
+        <div class="dash-meter"><i data-lucide="wind"></i><span><b id="dash-fill"></b></span></div>
+      </section>
+
+      <section id="upgrade-screen" class="screen screen--modal is-hidden" aria-label="选择强化">
+        <div class="modal-heading">
+          <span>补给同步完成</span>
+          <h2>选择一项强化</h2>
+        </div>
+        <div id="upgrade-options" class="upgrade-grid"></div>
+      </section>
+
+      <section id="pause-screen" class="screen screen--modal is-hidden" aria-label="暂停">
+        <div class="dialog">
+          <span class="dialog__eyebrow">行动暂停</span>
+          <h2>隔离区在等你</h2>
+          <button id="resume-button" class="command command--primary"><i data-lucide="play"></i><span>继续行动</span></button>
+          <button id="restart-button-pause" class="command command--ghost"><i data-lucide="rotate-ccw"></i><span>重新开始</span></button>
+        </div>
+      </section>
+
+      <section id="result-screen" class="screen screen--result is-hidden" aria-label="行动结果">
+        <div class="result-panel">
+          <p id="result-kicker">行动结束</p>
+          <h2 id="result-title">你被尸潮吞没</h2>
+          <div class="result-stats">
+            <div><span>生存时间</span><strong id="result-time">00:00</strong></div>
+            <div><span>清除感染体</span><strong id="result-kills">0</strong></div>
+            <div><span>最终等级</span><strong id="result-level">1</strong></div>
+            <div><span>最高连杀</span><strong id="result-combo">0</strong></div>
+          </div>
+          <button id="restart-button" class="command command--primary"><i data-lucide="rotate-ccw"></i><span>再次突围</span></button>
+          <button id="home-button" class="command command--ghost"><i data-lucide="home"></i><span>返回主界面</span></button>
+        </div>
+      </section>
+
+      <div id="damage-flash"></div>
+      <div id="joystick" class="joystick" aria-hidden="true"><span id="joystick-knob"></span></div>
+      <button id="dash-button" class="dash-button" aria-label="冲刺"><i data-lucide="chevrons-right"></i></button>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
