@@ -111,11 +111,11 @@ export class GameScene extends Phaser.Scene {
     }
     g.fillStyle(0xffd167, 1); g.fillRoundedRect(3, 8, 18, 8, 4); g.fillStyle(0xfff0af, 1); g.fillRect(9, 6, 7, 12); g.generateTexture('bullet', 24, 20); g.clear();
     g.fillStyle(0xa865e3, 1); g.fillCircle(11, 11, 7); g.fillStyle(0xe0c7ff, 0.9); g.fillCircle(8, 8, 2); g.generateTexture('acid', 22, 22); g.clear();
-    g.fillStyle(0x55e0cb, 1); g.fillTriangle(12, 1, 23, 12, 12, 23); g.fillStyle(0xc1fff0, 0.9); g.fillTriangle(12, 6, 18, 12, 12, 18); g.generateTexture('xp', 24, 24); g.clear();
-    g.fillStyle(0x78e6bf, 1); g.fillCircle(20, 20, 16); g.fillStyle(0x183a39, 1); g.fillRect(16, 10, 8, 20); g.fillRect(10, 16, 20, 8); g.generateTexture('medkit', 40, 40); g.clear();
+    g.fillStyle(0x2f9e91, 0.22); g.fillCircle(12, 12, 12); g.fillStyle(0x55e0cb, 1); g.fillTriangle(12, 1, 23, 12, 12, 23); g.fillStyle(0xbafff1, 0.92); g.fillTriangle(12, 5, 18, 12, 12, 19); g.lineStyle(1, 0xe8fff9, 0.7); g.strokeTriangle(12, 1, 23, 12, 12, 23); g.generateTexture('xp', 24, 24); g.clear();
+    g.fillStyle(0x0c1718, 0.36); g.fillEllipse(20, 35, 32, 8); g.fillStyle(0x72d0ab, 1); g.fillRoundedRect(5, 5, 30, 27, 6); g.fillStyle(0xb5ffe0, 0.72); g.fillRect(8, 8, 24, 4); g.fillStyle(0x214b42, 1); g.fillRect(16, 12, 8, 16); g.fillRect(12, 16, 16, 8); g.lineStyle(2, 0x0c2523, 0.8); g.strokeRoundedRect(5, 5, 30, 27, 6); g.generateTexture('medkit', 40, 40); g.clear();
     g.fillStyle(0xf0724d, 0.18); g.fillCircle(52, 52, 49); g.lineStyle(2, 0xf8a15e, 0.5); g.strokeCircle(52, 52, 44); g.generateTexture('fire-zone', 104, 104); g.clear();
-    g.fillStyle(0xbbeee5, 1); g.fillTriangle(18, 3, 33, 18, 18, 36); g.fillStyle(0x4c8bb4, 1); g.fillTriangle(18, 3, 18, 36, 3, 18); g.generateTexture('blade', 36, 40); g.clear();
-    g.fillStyle(0x72d5e7, 1); g.fillCircle(24, 24, 18); g.fillStyle(0x183a43, 1); g.fillCircle(24, 24, 9); g.lineStyle(3, 0xe4ffff, 1); g.strokeCircle(24, 24, 13); g.generateTexture('drone', 48, 48); g.destroy();
+    g.fillStyle(0x102123, 0.58); g.fillCircle(18, 22, 16); g.fillStyle(0xbbeee5, 1); g.fillTriangle(18, 2, 34, 19, 18, 38); g.fillStyle(0x4c8bb4, 1); g.fillTriangle(18, 2, 18, 38, 2, 19); g.fillStyle(0xe9ffff, 0.9); g.fillTriangle(18, 8, 26, 19, 18, 30); g.lineStyle(2, 0x5f9db7, 1); g.strokeCircle(18, 20, 12); g.generateTexture('blade', 36, 40); g.clear();
+    g.fillStyle(0x72d5e7, 1); g.fillCircle(24, 24, 18); g.fillStyle(0x183a43, 1); g.fillCircle(24, 24, 9); g.fillStyle(0xdffeff, 0.9); g.fillCircle(20, 19, 3); g.lineStyle(3, 0xe4ffff, 1); g.strokeCircle(24, 24, 13); g.lineStyle(2, 0x2d7281, 0.8); g.lineBetween(7, 24, 1, 24); g.lineBetween(41, 24, 47, 24); g.generateTexture('drone', 48, 48); g.destroy();
   }
 
   createPlayerRig() {
